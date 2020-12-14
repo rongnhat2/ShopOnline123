@@ -1,0 +1,89 @@
+.item_wrapper{
+	position: relative;
+	width: 100%;
+	height: 240px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border: 1px solid #ccc;
+}
+.item_wrapper .content_wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+.item_wrapper .content_wrapper .wrapper{
+	width: 550px;
+	height: 100%;
+	margin: auto;
+}
+.item_wrapper .content_wrapper .content_component{
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.item_wrapper .content_wrapper .image_component{
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.item_wrapper .content_wrapper .image_component img{
+	width: 100%;
+}
+.item_wrapper .content_wrapper .content_component h2{
+	font-size: 24px;
+	line-height: 24px;
+	min-height: 26px;
+	margin: 0 0 16px 0;
+	color: #fff;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.item_wrapper .content_wrapper .content_component p{
+	font-size: 10px;
+	line-height: 11px;
+	min-height: 13px;
+	margin: 0 0 20px 0;
+	color: #fff;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.item_wrapper .content_wrapper .content_component .button_wrapper{
+	
+}
+.item_wrapper .content_wrapper .content_component .button_wrapper a{
+	padding: 3px 7px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	margin: 0 10px 0 0;
+	font-size: 8px;
+}
+.item_wrapper .content_wrapper .content_component .button_wrapper a:nth-child(even){
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+.item_wrapper .content_wrapper .content_component .button_wrapper a i{
+	margin: 0 0 0 10px;
+}
+.item_wrapper img{
+	width: 100%;
+}
+.item_wrapper .bg_wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00000085;
+	z-index: 2;
+}

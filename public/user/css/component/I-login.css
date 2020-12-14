@@ -1,0 +1,103 @@
+
+.wrapper {
+    width: 1280px;
+    height: 100%;
+    margin: auto;
+}
+
+.I-login{
+	width: 100%;
+}
+.I-login .login_header{
+	width: 100%;
+	height: 75px;
+}
+.I-login .login_header .image_wrapper{
+	height: 75px;
+	display: flex;
+	align-items: center;
+}
+.I-login .login_header .image_wrapper img{
+	height: 50px;
+}
+.I-login .login_content{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.I-login .login_content .login_form{
+	margin: 20px 0 0 0;
+	width: 100%;
+	max-width: 500px;
+	padding: 20px;
+	overflow: hidden;
+	box-shadow: 0 0 5px 1px #aaa;
+	border-radius: 5px;
+}
+.I-login .login_content .login_form h1.title_form{
+	width: 100%;
+	margin: 0 0 20px 0;
+	font-size: 24px;
+	color: #ef4481;
+    font-family: 'Lobster' !important;
+}
+.I-login .login_content .login_form input{
+	width: 100%;
+	margin: 0 0 20px 0;
+	font-size: 14px;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0 15px;
+}
+.I-login .login_content .login_form select{
+	width: 100%;
+	margin: 0 0 20px 0;
+	font-size: 14px;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0 15px;
+}
+.I-login .login_content .login_form button{
+	width: 100%;
+	height: 32px;
+	background-color: #ef4481;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	margin: 0 0 10px 0;
+}
+.I-login .login_content .login_form a.forgot{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: #ef4481;
+	font-size: 14px;
+	padding: 10px 0 15px 0;
+}
+.I-login .login_content .login_form .register_wrapper{
+	padding: 10px 0 0 0;
+	text-align: center;
+	border-top: 1px solid #ef4481;
+	width: 100%;
+}
+.I-login .login_content .login_form .register_wrapper span{
+	margin: 0 5px 0 0;
+}
+.I-login .login_content .login_form a{
+	color: #ef4481;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+

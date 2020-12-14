@@ -1,0 +1,146 @@
+.I-preview{
+	float: left;
+}
+.I-preview.technology{
+	width: 600px;
+}
+.I-preview.carousel{
+	width: 600px;
+}
+.I-preview.leader{
+	width: 400px;
+}
+.I-preview.leader .item_wrapper{
+	height: 850px;
+}
+.I-preview.aboutus{
+	width: 600px;
+}
+.I-preview.aboutus .item_wrapper{
+	height: 300px;
+}
+.I-preview.services{
+	width: 600px;
+}
+.I-preview.services .item_wrapper{
+	height: 850px;
+}
+.change_language{
+	width: 100%;
+	padding: 30px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.change_language .change_language-button{
+	width: 100px;
+	height: 32px;
+	border: 1px solid #007bff;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.change_language .change_language-button.is-select{
+	background-color: #007bff;
+}
+.item_language_none{
+	display: none !important;
+}
+.component_wrapper{
+	padding: 0 15px;
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+.component_wrapper .component_title{
+	width: 100%;
+	margin: 0 0 5px 0;
+}
+.component_wrapper .component_content{
+	width: 100%;
+}
+.input_wrapper{
+	width: 100%;
+	height: 32px;
+}
+.input_wrapper input{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0 10px;
+}
+.select_image_wrapper{
+	width: 100%;
+	display: flex;
+}
+.select_image_wrapper .select_on{
+	width: 50%;
+	margin: 0 5px;
+	height: 40px;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.select_image_wrapper .select_on label{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.select_image_wrapper .select_on.on_pc{
+	background-color: #007bff;
+}
+.select_image_wrapper .select_on.on_gallery{
+	background-color: #28a745;
+}
+.component_wrapper .nation{
+	overflow: hidden;
+}
+.component_wrapper .nation_icon{
+	float: left;
+	width: 100px;
+	height: 40px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.component_wrapper .select_nation{
+	float: left;
+	margin: 0 0 0 20px;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ccc;
+	color: #002e6a;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.component_wrapper .option_nation{
+	margin: 5px 0 0 0;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	transition: all 200ms ease;
+}
+.component_wrapper .option_nation .row{
+	margin: 0;
+}
+.component_wrapper .option_nation.is-open{
+	padding: 10px 0 0 0 ;
+	height: 60px;
+}
+ 
+ 

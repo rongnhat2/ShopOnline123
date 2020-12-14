@@ -1,0 +1,56 @@
+
+.manager_item{
+	margin: 20px auto;
+	width: 330px;
+	padding: 0 15px;
+}
+.manager_item .manager_item_wrapper{
+	position: relative;
+	width: 100%;
+	box-shadow: 0px 0px 10px #0000001a;
+	border-radius: 5px;
+	margin: 0 0 15px 0;
+}
+.manager_item .manager_item_wrapper .manager_image{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.manager_item .manager_item_wrapper .manager_image img{
+	width: 300px;
+}
+.manager_item .manager_item_wrapper .manager_description{
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	background-color: #ffffffde;
+}
+.manager_item .manager_item_wrapper .manager_description .manager_name{
+	margin: 0 0 20px 0;
+	font-size: 18px;
+	border: 1px solid #ccc;
+	min-height: 20px;
+}
+.manager_item .manager_item_wrapper .manager_description .manager_position{
+	font-style: italic;
+	font-weight: bold;
+	margin: 0 0 20px 0;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	min-height: 15px;
+}
+.manager_item .manager_item_wrapper .manager_description .manager_detail{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    -webkit-line-clamp: 7;
+    height: 140px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+	border: 1px solid #ccc;
+}

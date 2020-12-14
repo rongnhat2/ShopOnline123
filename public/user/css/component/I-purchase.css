@@ -1,0 +1,90 @@
+.I-purchase{
+	width: 100%;
+	background-color: #f5f5f5;
+	overflow: hidden;
+}
+.I-purchase .purchase_wrapper{
+	padding: 30px 0;
+}
+.I-purchase .purchase_wrapper .navigation_wrapper{
+	width: 100%;
+}
+.I-purchase .purchase_wrapper .navigation_wrapper a{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 0 0 10px 0;
+}
+.I-purchase .purchase_wrapper .navigation_wrapper .icon{
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px 0 0;
+}	
+.I-purchase .purchase_wrapper .navigation_wrapper .icon.user{
+	background-color: #ffc107;
+}
+.I-purchase .purchase_wrapper .navigation_wrapper .icon.address{
+	background-color: #44b5ff;
+}
+.I-purchase .purchase_wrapper .navigation_wrapper .icon.buying{
+	background-color: #ee4d2d;
+}
+.I-purchase .purchase_wrapper .main_wrapper{
+	padding: 20px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_title{
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #ccc;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_title h5{
+	
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_title p{
+	
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_content{
+	padding: 30px 0;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_content .data_wrapper{
+	margin: 0 0 20px 0;
+	width: 100%;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_content .data_wrapper .title_data{
+	width: 100%;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	color: #555c;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_content .data_wrapper input{
+	width: 100%;
+	height: 32px;
+	margin: 0 0 10px 0;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+.I-purchase .purchase_wrapper .main_wrapper .main_content .data_wrapper input:disabled {
+	background-color: #fff;
+	border-color: #fff;
+}
+.I-purchase .purchase_wrapper .main_wrapper .data_wrapper button{
+	width: 100%;
+	height: 32px;
+	margin: 0 0 10px 0;
+	/*border: none;*/
+}
+
+
+
+
+
