@@ -55,7 +55,6 @@
 														<a href="#"><img src="<?php echo $value->image ?>" alt="#" style="width: 80px"></a>
 														<div class="pro-details">
 															<h2><a href="{{ route('customer.product_detail', ['slug' => $value->slug]) }}"><?php echo $value->name ?></a></h2>
-															<p><?php echo $value->detail ?> </p>
 															<span>Size : <?php echo $sizes[$key] ?></span>
 															<p>Màu : <span style="display:inline-block; width: 10px;height: 10px;background-color: <?php echo $colors[$key] ?>"></span></p>
 														</div>

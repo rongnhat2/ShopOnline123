@@ -128,14 +128,14 @@ class FrontController extends Controller
                 array_push($keys, $s_key);
             }
         }
-        return view('user.shopping-cart', compact('category', 'size_data', 'cart', 'items', 'quantity', 'sizes', 'colors', 'keys'));
+        return view('user.shopping-cart', compact('category', 'cart', 'items', 'quantity', 'sizes', 'colors', 'keys'));
     }
     // trang đặt hàng
     public function checkout(){
         // kiểm tra băt buộc đăng nhập
         $customer = Session('customer') ? Session::get('customer') : null;
         if ($customer == null) {
-           return redirect()->route('user.getlogin');
+           return redirect()->route('user.login');
         }
         // nếu đăng nhâp thì chạy tiếp
         $category       = $this->category->getAll();
@@ -163,7 +163,7 @@ class FrontController extends Controller
                 array_push($keys, $s_key);
             }
         }
-        return view('user.checkout', compact('category', 'size_data', 'cart', 'items', 'quantity', 'sizes', 'colors', 'keys', 'customer_data'));
+        return view('user.checkout', compact('category', 'cart', 'items', 'quantity', 'sizes', 'colors', 'keys', 'customer_data'));
     }
     // đặt hàng thành công
     public function submit_cart(){

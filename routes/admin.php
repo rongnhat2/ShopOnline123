@@ -59,7 +59,7 @@ Route::namespace('Admin')->group(function () {
         });
 
         // modulle item
-        Route::middleware(['checkacl:order'])->middleware(['checkacl:item'])->prefix('item')->group(function () {
+        Route::middleware(['checkacl:item'])->prefix('item')->group(function () {
             Route::get('/', 'ItemController@index')->name('item.index');
             Route::get('/create', 'ItemController@create')->name('item.add');
 
