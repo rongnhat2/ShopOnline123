@@ -88,7 +88,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#CATEGORY" aria-expanded="false" aria-controls="CATEGORY">
                             <i class="mdi mdi-codepen menu-icon"></i>
-                            <span class="menu-title">Danh mục</span>
+                            <span class="menu-title">Sản phẩm</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="CATEGORY">

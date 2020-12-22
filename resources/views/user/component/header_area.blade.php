@@ -51,7 +51,7 @@
 								</li>
                         		@endguest
 								<li><a href="{{ route('customer.shopping_cart') }}">Đặt hàng</a></li>
-								<!-- <li class="search-area">
+								<li class="search-area">
 									<a><img src="{{ asset('img/icon/search.png') }}" alt="" /></a>
 									<div class="header-search">
 										<form method="POST" action="#" class="search-box">
@@ -60,7 +60,7 @@
 											</div>
 										</form>						            
 									</div>
-								</li> -->
+								</li>
 							</ul>
 						</div>
 					</div>

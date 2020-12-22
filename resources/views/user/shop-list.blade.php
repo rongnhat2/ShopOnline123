@@ -10,7 +10,7 @@
 	</header>
 	<main>
 		<!-- BREADCRUMB AREA START -->
-		<div class="breadcrumb-area">
+		<!-- <div class="breadcrumb-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- BREADCRUMB AREA END -->
 		<!-- SHOP AREA START -->
 		<div class="shop-area section-padding">

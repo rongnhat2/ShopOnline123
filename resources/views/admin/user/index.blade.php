@@ -30,7 +30,7 @@
     <div class="row grid-margin">
         <div class="col-12 grid-margin stretch-card">
             <div class="card">
-                <a href="{{ route('user.add') }}" type="button" class="btn btn-primary">Thêm</a>
+                <a href="{{ route('admin.add') }}" type="button" class="btn btn-primary">Thêm</a>
             </div>
         </div>
     </div>
