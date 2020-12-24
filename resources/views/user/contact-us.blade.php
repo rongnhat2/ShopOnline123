@@ -16,7 +16,7 @@
 						<ul>
 							<li>
 								<i class="flaticon-location"></i>
-								<p>8901 Marmora Raod, Glasgow, D04  89GR</p>
+								<p>16 Bạch Mai - Thanh Nhàn, Hai Bà Trưng, Hà Nội</p>
 							</li>
 						</ul>
 					</div>
@@ -26,7 +26,7 @@
 						<ul>
 							<li>
 								<i class="flaticon-phone-call"></i>
-								<p>Telephone : (801) 4256  9856 Telephone : (801) 4256  9658</p>
+								<p>Telephone : 0981 948 966</p>
 							</li>
 						</ul>
 					</div>
@@ -36,7 +36,7 @@
 						<ul>
 							<li>
 								<i class="flaticon-earth"></i>
-								<p>Email: Contact@devitems.us Website: www.devitems.com</p>
+								<p>Email: phamthanhhoai96@gmail.com</p>
 							</li>
 						</ul>
 					</div>

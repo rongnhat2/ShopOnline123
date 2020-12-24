@@ -34,7 +34,7 @@
                     <input type="text" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Mật khẩu">
                     <button type="submit">Đăng nhập</button>
-                    <!-- <a href="{{ route('user.getpassword') }}" class="forgot">Quên mật khẩu ?</a> -->
+                    <a href="{{ route('user.getpassword') }}" class="forgot">Quên mật khẩu ?</a>
                     <div class="register_wrapper"><span>hoặc</span><a href="{{ route('user.getregister') }}">Đăng kí</a></div>
                 </form>
             </div>

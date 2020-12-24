@@ -10,15 +10,15 @@
 								<ul>
 									<li>
 										<i class="flaticon-location"></i>
-										<p>43 Nguyễn Chí Thanh - Hà nội - Hà nội</p>
+										<p>16 Bạch Mai - Thanh Nhàn, Hai Bà Trưng, Hà Nội</p>
 									</li>
 									<li>
 										<i class="flaticon-phone-call"></i>
-										<p>Điện thoại : (+84) 4256  9856</p>
+										<p>Điện thoại : 0981 948 966</p>
 									</li>
 									<li>
 										<i class="flaticon-earth"></i>
-										<p>Email: brandshop@gmail.com</p>
+										<p>Email: phamthanhhoai96@gmail.com</p>
 									</li>
 								</ul>
 							</div>

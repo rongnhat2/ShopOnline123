@@ -13,13 +13,13 @@
 								<li>
 									<a href="#">
 										<img src="{{ asset('img/icon/phone.png') }}" alt="" />
-										+84 964 979 564
+										0981 948 966
 									</a>
 								</li>
 								<li>
 									<a href="#">
 										<img src="{{ asset('img/icon/mail.png') }}" alt="" />
-										info@brandshop.com
+										phamthanhhoai96@gmail.com
 									</a>
 								</li>
 							</ul>
