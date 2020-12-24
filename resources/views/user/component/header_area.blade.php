@@ -54,9 +54,10 @@
 								<li class="search-area">
 									<a><img src="{{ asset('img/icon/search.png') }}" alt="" /></a>
 									<div class="header-search">
-										<form method="POST" action="#" class="search-box">
+										<form method="post" action="{{ route('customer.search') }}" class="search-box">
+											@csrf
 											<div>
-												<input type="text" placeholder="Tìm kiếm" value="">
+												<input type="text" placeholder="Tìm kiếm" value="" name="search_value">
 											</div>
 										</form>						            
 									</div>

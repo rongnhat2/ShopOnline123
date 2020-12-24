@@ -228,3 +228,13 @@
   border: 1px solid #7571f9;
   border-radius: 2px;
 }
+
+
+.buy_percent .ct-series-a .ct-slice-pie{
+  fill: #80d691;
+}
+.buy_percent .ct-series-b .ct-slice-pie{
+  fill: #f7cb9b;
+}
+
+

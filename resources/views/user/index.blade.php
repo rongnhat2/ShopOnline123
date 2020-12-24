@@ -7,9 +7,9 @@
 	<main>
 	 	@include('user.component.slider')
 	 	<br>
-	 	@include('user.component.service')
 	 	<!-- Sản phẩm nổi bật -->
 	 	@include('user.component.arrival')
+	 	@include('user.component.service')
 	 	<!-- Sản phẩm mới -->
 	 	@include('user.component.featured')
 	</main>

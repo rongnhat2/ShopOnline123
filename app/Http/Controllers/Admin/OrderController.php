@@ -72,6 +72,11 @@ class OrderController extends Controller
         $order       = $this->order->getOrderHistory();
         return view('admin.order.history', compact('order'));
     }
+    // lịch sử chi tiết
+    public function history_detail($id){
+        $orderDetail       = $this->order_detail->getOrderDetail($id);
+        return view('admin.order.history_detail', compact('orderDetail'));
+    }
 
 
 }

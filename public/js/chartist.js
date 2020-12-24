@@ -106,26 +106,28 @@
   }
 
   //Pie
+  var pielabels = ['Thành công', 'Hủy'];
   if ($('#ct-chart-pie').length) {
-    var data = {
-      series: [5, 3, 4]
+    var datapie = {
+      series: [75, 25]
     };
 
     var sum = function(a, b) {
       return a + b
     };
 
-    new Chartist.Pie('#ct-chart-pie', data, {
-      labelInterpolationFnc: function(value) {
-        return Math.round(value / data.series.reduce(sum) * 100) + '%';
+    new Chartist.Pie('#ct-chart-pie', datapie, {
+      labelInterpolationFnc: function(value, index) {
+        var percentage = Math.round(value / datapie.series.reduce(sum) * 100) + '%';
+        return pielabels[index] + ' ' + percentage;
       }
     });
   }
 
   //Donut
-  var labels = ['safari', 'chrome', 'explorer', 'firefox'];
+  var labels = ['Nam', 'Nữ'];
   var data = {
-    series: [20, 40, 10, 30]
+    series: [20, 40]
   };
 
   if ($('#ct-chart-donut').length) {

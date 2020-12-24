@@ -27,6 +27,8 @@ Route::namespace('Admin')->group(function () {
    	Route::group(['middleware' => ['auth:admin']], function () {
 
 
+        // analytic
+        Route::get('/analytic', 'AnalyticController@analytic')->name('admin.analytic');
         
         // order
         Route::prefix('customer')->group(function () {
@@ -41,6 +43,7 @@ Route::namespace('Admin')->group(function () {
             Route::get('trans_detail/{id}', 'OrderController@trans_detail')->name('order.trans_detail');
             Route::get('trans_update/{c_id}/{id}', 'OrderController@trans_update')->name('order.trans_update');
             Route::get('history', 'OrderController@history')->name('order.history');
+            Route::get('history_detail/{id}', 'OrderController@history_detail')->name('order.history_detail');
         });
 
         // History warehouse

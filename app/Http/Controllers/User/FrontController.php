@@ -250,4 +250,20 @@ class FrontController extends Controller
         return $view;
     }
 
+    public function search(Request $request){
+        // danh mục sản phẩm
+        $category       = $this->category->getAll();
+
+        // Tên danh mục
+        $category_title = "Danh mục sản phẩm";
+        // Sản phẩm
+        $items = $this->item->findItem($request);
+
+        return view('user.shop-list', compact('category', 'category_title', 'items'));
+    }
+    public function contact(){
+        // danh mục sản phẩm
+        $category       = $this->category->getAll();
+        return view('user.contact-us', compact('category'));
+    }
 }

@@ -29,7 +29,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Danh Mục</h4>
+            <h4 class="card-title">Đơn hàng</h4>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
@@ -40,6 +40,7 @@
                                     <th>Mã đơn hàng</th>
                                     <th>Tổng giá</th>
                                     <th>Người giao</th>
+                                    <th>Hình thức thanh toán</th>
                                     <th>Hành động</th>
                                 </tr>
                             </thead>
@@ -50,6 +51,13 @@
                                         <td><?php echo $value->code ?></td>
                                         <td><?php echo number_format($value->prices) . ' đ' ?></td>
                                         <td><?php echo $value->user_order[0]->shipper->name ?></td>
+                                        <td>
+                                            <?php if ($value->payment == 1): ?>
+                                                <span class="btn btn-primary">Thanh toán khi nhận hàng</span>
+                                            <?php elseif ($value->payment == 2): ?>
+                                                <span class="btn btn-success">Đã thanh toán online</span>
+                                            <?php endif ?>
+                                        </td>
                                         <td>
                                             <a href="{{ route('order.trans_detail', ['id' => $value->id]) }}" class="btn btn-outline-primary">Chi tiết</a>
                                         </td>

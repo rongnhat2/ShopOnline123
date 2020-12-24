@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
-                    <button class="btn btn-light">Hủy</button>
+                    <a href="{{ route('item.index') }}" class="btn btn-light">Hủy</a>
                 </form>
             </div>
         </div>

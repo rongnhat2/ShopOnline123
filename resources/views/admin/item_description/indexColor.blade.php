@@ -33,12 +33,12 @@
         <div class="col-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Thêm danh mục</h4>
+                    <h4 class="card-title">Thêm màu sắc</h4>
                     <form class="form-sample">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tên danh Mục</label>
+                                    <label class="col-sm-3 col-form-label">Tên màu sắc</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="name"  required=""/>
                                     </div>

@@ -47,9 +47,6 @@
 											</a>
 										</li>
 									</ul>
-									<ul class="paginations">
-										{{ $items->links() }}
-									</ul>
 								</div>
 								<!--NAV PILL-->
 								<div class="tab-content">

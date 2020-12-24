@@ -2,7 +2,7 @@
 @section('body')
 
 
-    <form method="post" action="{{ route('admin.changePassword') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('admin.postpassword') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-12 grid-margin">
             <div class="card">

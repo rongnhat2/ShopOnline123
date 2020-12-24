@@ -38,8 +38,8 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href=""><img src="{{ asset('img/home-one/logo.png') }}" alt="Logo Shop" /></a>
-                <a class="navbar-brand brand-logo-mini" href=""><img src="{{ asset('img/home-one/logo.png') }}" alt="LS" /></a>
+                <a class="navbar-brand brand-logo" href="{{ route('admin.analytic') }}"><img src="{{ asset('img/home-one/logo.png') }}" alt="Logo Shop" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{{ route('admin.analytic') }}"><img src="{{ asset('img/home-one/logo.png') }}" alt="LS" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -79,6 +79,12 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.analytic') }}">
+                            <i class="mdi mdi-finance menu-icon"></i>
+                            <span class="menu-title">Thống kê</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('gallery.index') }}">
                             <i class="mdi mdi-image-filter menu-icon"></i>
@@ -170,7 +176,7 @@
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href=" " ></a>. All rights reserved.</span>
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"><a href=" " ></a></span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">From Pham Thanh Hoai With Luv <i class="mdi mdi-heart text-danger"></i></span>
                     </div>
                 </footer>
@@ -218,6 +224,7 @@
     <!-- Custom js for this page-->
     <script src="{{ asset('js/editorDemo.js') }}"></script>
 
+    @yield('js')
     <!-- custom javascript -->
     <script src="{{ asset('js/effect_custom.js') }}"></script>
     <script src="{{ asset('js/bootstrap3.js') }}"></script>

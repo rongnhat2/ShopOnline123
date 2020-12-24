@@ -146,8 +146,12 @@
 									</div>
                     				@guest
                     				@else
+			                            <form id="VNPAY" action="{{ route('customer.create_pay') }}" method="POST" style="display: none;">
+			                                @csrf
+			                            </form>
 										<div class="subtotal-button">
 											<a href="{{ route('customer.submit_cart') }}">Đặt hàng</a>
+											<a href="#" onclick="event.preventDefault(); document.getElementById('VNPAY').submit();" style="color: #fff;background-color: #337ab7">Thanh toán VNPAY</a>
 										</div>
                     				@endguest
 								</div>

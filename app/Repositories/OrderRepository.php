@@ -101,9 +101,10 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
                 );
             }]
         )->orderBy('created_at', 'desc')->get();
-        dd($order);
         return $order;
     }
+    
+
 
     // Admin - lấy đơn hàng đang vận chuyển
     public function getTransOrder()
@@ -132,6 +133,43 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
     }
     // xác nhận trạng thái cuối của đơn hàng - Hủy - thành công
     public function getTransOrderUpdate($c_id,  $id){
+        $order = $this->model->where('id', $c_id)->with(['user_order' => function ($q){
+                $q->with(['shipper' => function ($q1){
+                        $q1->with('shipper_detail');
+                    }]
+                )->with(['user' => function ($q1){
+                        $q1->with('user_detail');
+                    }]
+                )->with(
+                    ['order' => function ($q1){
+                        $q1->with('order_detail');
+                    }]
+                );
+            }]
+        )->first();
+        $list_item = $order->user_order[0]->order->order_detail;
+        foreach ($list_item as $key => $value) {
+            // số lượng ban đầu
+            $quantity = $borrow = DB::table('item')
+                        ->join('item_color', 'item_color.item_id', '=', 'item.id')
+                        ->join('item_quantity', 'item_color.id', '=', 'item_quantity.item_color')
+                        ->where('item.id', '=', $value->item_id)
+                        ->where('item_color.hex', '=', $value->color)
+                        ->where('item_quantity.size', '=', $value->size)
+                        ->first()->quantity;
+                        // số lượng trong đơn hàng
+            $quantity_order = $value->quantity;
+            // cập nhật đối tượng
+            DB::table('item')
+                        ->join('item_color', 'item_color.item_id', '=', 'item.id')
+                        ->join('item_quantity', 'item_color.id', '=', 'item_quantity.item_color')
+                        ->where('item.id', '=', $value->item_id)
+                        ->where('item_color.hex', '=', $value->color)
+                        ->where('item_quantity.size', '=', $value->size)->update([
+                'quantity' => $quantity - $quantity_order,
+            ]);
+        }
+
         try {
             DB::beginTransaction();
 
@@ -181,6 +219,28 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
                 'code'  => 'CS' . rand(0, 10000),
                 'prices' => $prices,
                 'status' => '0',
+                'payment' => '1',
+            ]);
+            
+            DB::commit();
+            return $id;
+        } catch (\Exception $exception) {
+            dd($exception);
+            DB::rollBack();
+            return true;
+        }
+    }
+    // Customer - Đăt hàng Online
+    public function createOrderOnline($prices)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = $this->model->create([
+                'code'  => 'CS' . rand(0, 10000),
+                'prices' => $prices,
+                'status' => '0',
+                'payment' => '2',
             ]);
             
             DB::commit();

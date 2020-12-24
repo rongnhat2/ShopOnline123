@@ -105,6 +105,7 @@
                                                     <th>Tên khách</th>
                                                     <th>Địa chỉ</th>
                                                     <th>Số điện thoại</th>
+                                                    <th>Hình thức thanh toán</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -116,6 +117,13 @@
                                                         <td><?php echo $value->user_order[0]->user->name ?></td>
                                                         <td><?php echo $value->user_order[0]->user->user_detail->address ?></td>
                                                         <td><?php echo $value->user_order[0]->user->user_detail->telephone ?></td>
+                                                        <td>
+                                                            <?php if ($value->payment == 1): ?>
+                                                                <span class="btn btn-primary">Thanh toán khi nhận hàng</span>
+                                                            <?php elseif ($value->payment == 2): ?>
+                                                                <span class="btn btn-success">Đã thanh toán online</span>
+                                                            <?php endif ?>
+                                                        </td>
                                                     </tr>
                                                 <?php endforeach ?>
                                             </tbody>

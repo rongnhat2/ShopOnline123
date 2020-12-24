@@ -101,6 +101,10 @@ class ItemRepository extends BaseRepository implements RepositoryInterface
         return $item;
     }
 
+    // tìm kiếm sản phẩm
+    public function findItem($request){
+        return $this->model->where('slug', 'like', '%'.$request->search_value.'%')->get();
+    }
 
     // Lấy ra sản phẩm
     public function getItem(){

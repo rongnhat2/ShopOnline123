@@ -14,7 +14,7 @@
                                 <ul id="nav">
                                     <li class="current"><a href="{{ route('user.index') }}">Trang chủ</a> </li>
                                     <li><a href="{{ route('customer.shop_list', ['slug' => 'nam']) }}">Nam</a></li>
-                                    <li class="hot"><a href="{{ route('customer.shop_list', ['slug' => 'nu']) }}">Nữ</a></li>
+                                    <li><a href="{{ route('customer.shop_list', ['slug' => 'nu']) }}">Nữ</a></li>
                                     <li><a href="{{ route('customer.shop_list', ['slug' => 'tat-ca-san-pham']) }}">Danh mục</a>
                                     	<ul class="sub-menu">
                                         	<?php foreach ($category as $key => $value): ?>	
@@ -22,7 +22,7 @@
                                         	<?php endforeach ?>	
                                         </ul>
 									</li>
-                                    <li><a href="#">Liên Hệ</a></li>
+                                    <li><a href="{{ route('customer.contact') }}">Liên Hệ</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -55,7 +55,7 @@
 								<ul>
 									<li><a href="{{ route('user.index') }}">Trang chủ </a></li>
                                     <li><a href="{{ route('customer.shop_list', ['slug' => 'nam']) }}">Nam</a></li>
-                                    <li class="hot"><a href="{{ route('customer.shop_list', ['slug' => 'nu']) }}">Nữ</a></li>
+                                    <li><a href="{{ route('customer.shop_list', ['slug' => 'nu']) }}">Nữ</a></li>
                                     <li><a href="{{ route('customer.shop_list', ['slug' => 'tat-ca-san-pham']) }}">Danh mục</a>
 										<ul>
                                         	<?php foreach ($category as $key => $value): ?>	
@@ -63,7 +63,7 @@
                                         	<?php endforeach ?>	
 										</ul>
 									</li>
-									<li><a href="#"> Liên hệ </a></li>
+									<li><a href="{{ route('customer.contact') }}"> Liên hệ </a></li>
 								</ul>
 							</nav>
 						</div>	
