@@ -19,7 +19,7 @@
 								<li>
 									<a href="#">
 										<img src="{{ asset('img/icon/mail.png') }}" alt="" />
-										phamthanhhoai96@gmail.com
+										brandshop2110@gmail.com
 									</a>
 								</li>
 							</ul>

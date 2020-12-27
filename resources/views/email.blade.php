@@ -1,0 +1,1 @@
+<p>Bấm <a href="{{ $url }}">Vào đây</a> để reset mật khẩu</p>

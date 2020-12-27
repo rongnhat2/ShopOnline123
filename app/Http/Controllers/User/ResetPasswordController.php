@@ -3,11 +3,17 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\changePassRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\PasswordReset;
 use App\Notifications\ResetPasswordRequest;
+
+use Redirect,Response,Config;
+use Mail;
+use Hash;
+use App\Mail\MailNotify;
 
 class ResetPasswordController extends Controller
 {
@@ -16,41 +22,61 @@ class ResetPasswordController extends Controller
     }
     public function sendMail(Request $request)
     {
-        $user = User::where('email', $request->email)->firstOrFail();
-        $passwordReset = PasswordReset::updateOrCreate([
-            'email' => $user->email,
-        ], [
-            'token' => Str::random(60),
-        ], [
-            'created_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ], [
-            'updated_at' => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
-        if ($passwordReset) {
-            $user->notify(new ResetPassword($passwordReset->token));
+        $email = $request->email;
+        // kiểm tra user tồn tại
+        $checkUser = User::where('email', $email)->first();
+
+        if (!$checkUser) {
+            return  redirect()->back()->with('error', 'Email không tồn tại');
         }
-  
-        return response()->json([
-        'message' => 'We have e-mailed your password reset link!'
+        //  tạo hash code
+        $code = bcrypt(md5(time() . $email));
+
+        PasswordReset::create([
+            'email'          => $email,
+            'token'           => $code,
+            "created_at"    =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+            "updated_at"    => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
+        $url = route('user.updatepassword', ['code' => $code, 'email' => $email]);
+
+        Mail::send('email', array('url'=> $url), function($message) use ($email) {
+            $message->from('brandshop2110@gmail.com', 'Quên mật khẩu');
+            $message->to($email)->subject('Đặt lại mật khẩu cho tài khoản!');
+        });
+        return  redirect()->back()->with('success', 'Đường dẫn cập nhật mật khẩu đã được gửi tới email của bạn. Hãy kiểm tra email để thiết lập lại mật khẩu!!!');
     }
 
-    public function reset(Request $request, $token)
-    {
-        $passwordReset = PasswordReset::where('token', $token)->firstOrFail();
-        if (Carbon::parse($passwordReset->updated_at)->addMinutes(720)->isPast()) {
-            $passwordReset->delete();
+    public function resetPass(Request $request){
+        $email  =   $request->email;
+        $code   =   $request->code;
 
-            return response()->json([
-                'message' => 'This password reset token is invalid.',
-            ], 422);
+        //  kiểm tra token có tồn tại với email
+        $checkUser = PasswordReset::where([
+            'token' => $code,
+            'email' => $email
+        ])->first();
+
+        // lấy ra user
+        $user   = User::where([
+            'email' => $email
+        ])->first();
+
+        if(!$checkUser){
+            return redirect('/')->with('error', "Đường dẫn lấy lại mật khẩu không đúng !!!");
         }
-        $user = User::where('email', $passwordReset->email)->firstOrFail();
-        $updatePasswordUser = $user->update($request->only('password'));
-        $passwordReset->delete();
+        return view('user.auth.passwordReset', compact('user'));
+    }
 
-        return response()->json([
-            'success' => $updatePasswordUser,
-        ]);
+    public function postResetPassword(changePassRequest $request)
+    {       
+        // dd($request);
+        // lấy user cần đổi                 
+        $obj_user = User::find($request->id);
+        // lấy tạo mật khẩu mới               
+        $obj_user->password = Hash::make($request->password);
+        // lưu lại
+        $obj_user->save(); 
+        return redirect()->route('user.login')->with('success', "Đã cập nhật mật khẩu !!!");
     }
 }

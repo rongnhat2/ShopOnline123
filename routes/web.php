@@ -52,7 +52,9 @@ Route::namespace('User')->group(function () {
 
    	Route::get('change-password', 'ResetPasswordController@forgotPass')->name('user.getpassword');
     Route::post('reset-password', 'ResetPasswordController@sendMail')->name('user.postpassword');
-    Route::put('reset-password/{token}', 'ResetPasswordController@reset');
+    Route::get('update-password', 'ResetPasswordController@resetPass')->name('user.updatepassword');
+    Route::post('update-password', 'ResetPasswordController@postResetPassword')->name('user.updatepassword');
+
 
     Route::post('post-update', 'FrontController@updateData')->name('user.update');
 

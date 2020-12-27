@@ -18,7 +18,7 @@
 									</li>
 									<li>
 										<i class="flaticon-earth"></i>
-										<p>Email: phamthanhhoai96@gmail.com</p>
+										<p>Email: brandshop2110@gmail.com</p>
 									</li>
 								</ul>
 							</div>

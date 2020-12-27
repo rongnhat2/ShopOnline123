@@ -26,7 +26,7 @@
 						<ul>
 							<li>
 								<i class="flaticon-phone-call"></i>
-								<p>Telephone : 0981 948 966</p>
+								<p>Điện thoại : 0981 948 966</p>
 							</li>
 						</ul>
 					</div>
@@ -36,7 +36,7 @@
 						<ul>
 							<li>
 								<i class="flaticon-earth"></i>
-								<p>Email: phamthanhhoai96@gmail.com</p>
+								<p>Email: brandshop2110@gmail.com</p>
 							</li>
 						</ul>
 					</div>
