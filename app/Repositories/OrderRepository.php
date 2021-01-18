@@ -220,6 +220,7 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
                 'prices' => $prices,
                 'status' => '0',
                 'payment' => '1',
+                'order_time'    => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
             
             DB::commit();
@@ -237,10 +238,11 @@ class OrderRepository extends BaseRepository implements RepositoryInterface
             DB::beginTransaction();
 
             $id = $this->model->create([
-                'code'  => 'CS' . rand(0, 10000),
-                'prices' => $prices,
-                'status' => '0',
-                'payment' => '2',
+                'code'          => 'CS' . rand(0, 10000),
+                'prices'        => $prices,
+                'status'        => '0',
+                'payment'       => '2',
+                'order_time'    => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             ]);
             
             DB::commit();

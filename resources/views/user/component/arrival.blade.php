@@ -15,13 +15,13 @@
 									<input type="hidden" class="id_item" name="id" value="<?php echo $value->id ?>">
 									<div class="product-titel">
 										<h4><a href="{{ route('customer.product_detail', ['slug' => $value->slug]) }}"><?php echo $value->name ?></a></h4>
-										<div class="rating-box">
+										<!-- <div class="rating-box">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
-										</div>
+										</div> -->
 									</div>
 									<div class="box-content">
 										<div class="product-img">

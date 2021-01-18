@@ -113,30 +113,32 @@
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <div class="card-body">
+            <form class="card-body">
                 <h4 class="card-title" style="float: left;">Thống kê doanh thu</h4>
                 <button type="submit" class="btn btn-primary mr-2" style="float: right; margin: 0 10px; height: 38px">Lọc</button>
-                <select class="form-control" id="exampleSelectGender" style="float: right;width: 150px;">
-                    <option>12-2020</option>
-                    <option>01-2021</option>
+                <select class="form-control" name="time_control" id="exampleSelectGender" style="float: right;width: 150px;">
+                    <?php foreach ($history_time as $key => $value): ?>
+                        <option {{  $time_control == $key ? 'selected' : '' }}><?php echo $key ?></option>
+                    <?php endforeach ?>
                 </select>
                 <canvas id="areaChart"></canvas>
-            </div>
+            </form>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" style="float: left;">Thống kê bán hàng</h4>
+            <form class="card-body">
+                <h4 class="card-title" style="float: left;">Thống kê đơn hàng</h4>
                 <button type="submit" class="btn btn-primary mr-2" style="float: right; margin: 0 10px; height: 38px">Lọc</button>
-                <select class="form-control" id="exampleSelectGender" style="float: right;width: 150px;">
-                    <option>12-2020</option>
-                    <option>01-2021</option>
+                <select class="form-control" name="time_control" id="exampleSelectGender" style="float: right;width: 150px;">
+                    <?php foreach ($history_time as $key => $value): ?>
+                        <option {{  $time_control == $key ? 'selected' : '' }}><?php echo $key ?></option>
+                    <?php endforeach ?>
                 </select>
                 <canvas id="areaChart2"></canvas>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -217,7 +219,16 @@
       ?>],
     datasets: [{
       label: '',
-      data: [100000, 300000, 1100000, 200000, 100000, 100000, 400000, 100000, 100000, 1100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 50000, 100000, 200000, 300000, 100000, 0, 100000, 100000, 100000, 100000, 100000, 100000, 100000],
+      data: [
+          <?php 
+            for ($i=1; $i <= 31 ; $i++) { 
+                if (array_key_exists($i, $price_time)) {
+                    echo '"' .  $price_time[$i] . '",';
+                }else{
+                    echo '"0",';
+                }
+            }
+          ?>],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -247,7 +258,16 @@
       ?>],
     datasets: [{
       label: '',
-      data: [12, 19, 3, 12, 19, 3, 5, 2, 3, 3, 12, 19, 3, 5, 2, 3, 3, 12, 19, 3, 5, 2, 3, 3, 5, 2, 3, 5, 2, 3],
+      data: [
+          <?php 
+            for ($i=1; $i <= 31 ; $i++) { 
+                if (array_key_exists($i, $order_time)) {
+                    echo '"' .  $order_time[$i] . '",';
+                }else{
+                    echo '"0",';
+                }
+            }
+          ?>],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',

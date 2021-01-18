@@ -35,6 +35,7 @@ class AnalyticController extends Controller
      *  @return \Illuminate\Contracts\Support\Renderable
      */
     public function analytic(Request $request){
+        // dd($request);
     	// lấy ra số sản phẩm đã bán
     	$product_data  = $this->order_detail->getListProduct();
     	// lấy ra số khách hàng
@@ -59,32 +60,22 @@ class AnalyticController extends Controller
     	// đồ nữ
 		$product_woman 	= $this->item->getWomanProduct();
 
-		// kiểm tra thời gian bắt đầu dự án
-		$checkTime 	= $this->order->getOrder();
+        if ($request->time_control == null) {
+            $month = Carbon::now()->month;
+            $year = Carbon::now()->year;
+        }else{
+            $month = explode("-", $request->time_control)[0];
+            $year = explode("-", $request->time_control)[1];
+        }
 
-		// lấy ra danh sách duyệt thời gian
-    	$time 			= array();
+        // lấy ra thời gian lịch sử
+        $history_time = $this->order->getHistoryTime();
+        $order_time = $this->order->getOrderTime($month, $year);
+        $price_time = $this->order->getPriceTime($month, $year);
+        $time_control = $request->time_control == null ? '' : $request->time_control;
+        // dd($price_time);
 
-		if ($checkTime == 0) {
-			$month_time = Carbon::now()->month;
-			$year_time = Carbon::now()->year;
-		}else{
-			$firstTime 	= $this->order->getFirstOrder();
-
-            $dt = new \DateTime($firstTime->created_at);   // <== instance from another API
-            $carbon = Carbon::instance($dt);
-
-			$month_time = $carbon->month;
-			$year_time = $carbon->year;
-			
-		}
-		// dd($month_time, $year_time);
-
-		// $time_month	= $request->time_month == null ? Carbon::now()->month : $request->time_month;
-		// $time_year	= $request->time_year == null ? Carbon::now()->year : $request->time_year;
-    	
-    	// dd($time_month, $time_year);
-    	// $carousel = $this->carousel->getCarousel();
-        return view('admin.analytic', compact('customer_data', 'order_data', 'prices_data', 'product_data', 'trending_data', 'buying_data', 'buying_success', 'buying_remove', 'product_man', 'product_woman'));
+		// // kiểm tra thời gian bắt đầu dự án
+        return view('admin.analytic', compact('customer_data', 'order_data', 'prices_data', 'product_data', 'trending_data', 'buying_data', 'buying_success', 'buying_remove', 'product_man', 'product_woman', 'history_time', 'order_time', 'price_time', 'time_control'));
     }
 }

@@ -90,9 +90,12 @@ class ItemRepository extends BaseRepository implements RepositoryInterface
         $item = $this->model->where('sex', $sex)->paginate(10);
         return $item;
     }
+    
     // Lấy ra 1 sản phẩm theo slug
     public function getItemBySlug($slug){
-        $item = $this->model->where('slug', $slug)->paginate(10);
+        // lấy ra ID của categoỏy
+        $get_id = Category::where('slug', '=', $slug)->first()->id;
+        $item = $this->model->where('category_id', $get_id)->paginate(10);
         return $item;
     }
     // Lấy ra tất cả sản phẩm
@@ -103,7 +106,7 @@ class ItemRepository extends BaseRepository implements RepositoryInterface
 
     // tìm kiếm sản phẩm
     public function findItem($request){
-        return $this->model->where('slug', 'like', '%'.$request->search_value.'%')->get();
+        return $this->model->where('slug', 'like', '%'.static::to_slug($request->search_value).'%')->get();
     }
 
     // Lấy ra sản phẩm

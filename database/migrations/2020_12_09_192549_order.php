@@ -19,6 +19,7 @@ class Order extends Migration
             $table->string('prices');
             $table->string('status');
             $table->string('payment');
+            $table->time('order_time');
             $table->timestamps();
         });
     }

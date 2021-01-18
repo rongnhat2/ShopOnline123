@@ -50,7 +50,7 @@ Date Downloaded: 11/30/2018 1:56:41 PM !-->
                                 </div>
                             @endif
                             <h4>Đăng nhập Admin</h4>
-                            <form class="pt-3" method="POST" action="{{ route('admin.postlogin') }}" id="login-form">
+                            <form class="pt-3 admin_login" method="POST" action="{{ route('admin.postlogin') }}" id="login-form">
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email" required="" />
@@ -72,5 +72,14 @@ Date Downloaded: 11/30/2018 1:56:41 PM !-->
     </div>
 
 </body>
+
+<script type="text/javascript">
+    
+document.getElementById('login-form').onkeydown = function(e){
+    if(e.keyCode == 13){
+        document.getElementById('login-form').submit();
+    }
+};
+</script>
 
 </html>

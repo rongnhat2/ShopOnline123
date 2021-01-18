@@ -133,15 +133,67 @@ class AnalyticRepository extends BaseRepository implements RepositoryInterface
     public function getFirstOrder(){
         return $this->model->first();
     }
+    // lấy ra thời gian lịch sử
+    public function getHistoryTime(){
+        $item = $this->model
+            ->select(DB::raw('count(*) as user_count'), 'order_time')
+            ->groupBy('order_time')->pluck('user_count', 'order_time');
+        // danh sách dữ liệu
+        $listItem = array();
+        foreach ($item as $key => $value) {
+            $dt = new \DateTime($key);   // <== instance from another API
+            $carbon = Carbon::instance($dt);
+
+            $month_of_year = $carbon->month . '-' . $carbon->year;
+
+            if (!array_key_exists($month_of_year, $listItem))  $listItem[$month_of_year] = 0;
+            
+        }
+        return $listItem;
+    }
     // lấy ra biểu đồ bán sản phẩm
     public function getOrderTime($month, $year){
-        $item = $this->model->get();
+        $item = $this->model
+            ->select(DB::raw('count(*) as user_count'), 'order_time')
+            ->groupBy('order_time')->pluck('user_count', 'order_time');
+        // danh sách dữ liệu
+        $listItem = array();
         foreach ($item as $key => $value) {
-            $dt = new \DateTime($value->created_at);   // <== instance from another API
+            $dt = new \DateTime($key);   // <== instance from another API
             $carbon = Carbon::instance($dt);
-            echo $carbon->day; 
-            die;
+            if ($carbon->month == $month && $carbon->year == $year) {
+                // lấy ra ngày của giá trị
+                $key_value = $carbon->day;
+                $listItem[$key_value] = $value;
+            }
         }
+        // thêm các giá trị rỗng
+        // for ($i=1; $i < 32; $i++) { 
+        //     if (!array_key_exists($i, $listItem)) {
+        //         $listItem[$i] = 0;
+        //     }
+        // }
+        return $listItem;
     }
+    // lấy ra biểu đồ doanh thu sản phẩm
+    public function getPriceTime($month, $year){
+        $item = $this->model
+            ->select(DB::raw('sum(prices) as user_count'), 'order_time')
+            ->where('status', '=', '2')
+            ->groupBy('order_time')->pluck('user_count', 'order_time');
+        // danh sách dữ liệu
+        $listItem = array();
+        foreach ($item as $key => $value) {
+            $dt = new \DateTime($key);   // <== instance from another API
+            $carbon = Carbon::instance($dt);
+            if ($carbon->month == $month && $carbon->year == $year) {
+                // lấy ra ngày của giá trị
+                $key_value = $carbon->day;
+                $listItem[$key_value] = $value;
+            }
+        }
+        return $listItem;
+    }
+    
 
 }

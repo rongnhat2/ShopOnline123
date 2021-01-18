@@ -59,7 +59,7 @@
 													<div class="product-titel">
 														<h4><a href="{{ route('customer.product_detail', ['slug' => $value->slug]) }}"><?php echo $value->name ?></a></h4>
 														<div class="rating-box">
-															<span><?php echo $value->name ?> lượt xem</span>
+															<span><?php echo $value->view ?> lượt xem</span>
 														</div>
 													</div>
 													<div class="box-content">
@@ -103,7 +103,7 @@
 													<div class="single-pro-content fix">
 														<a href="{{ route('customer.product_detail', ['slug' => $value->slug]) }}" class="pro-name"><?php echo $value->name ?></a>
 														<div class="rating-box">
-															<span><?php echo $value->name ?> lượt xem</span>
+															<span><?php echo $value->view ?> lượt xem</span>
 														</div>
 														<p><?php echo $value->description ?></p>
 														<h4 class="list-pro-price">

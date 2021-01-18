@@ -36,7 +36,6 @@ $(function() {
     });
 });
 
-
           
 $('.image-select').on('click', function(e){
     var image = $(this).find('.image_url').text()
