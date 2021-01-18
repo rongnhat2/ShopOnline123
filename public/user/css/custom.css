@@ -428,3 +428,7 @@ fieldset.attribute-fieldset{
   align-items: center;
   justify-content: center;
 }
+
+.shop-tab-area .col-md-3{
+  height: 400px;
+}

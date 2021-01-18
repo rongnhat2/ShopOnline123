@@ -132,25 +132,13 @@
 								<!--  PAYMENT MTHHOD AREA -->
 								<div class="col-md-12">
 									<h5 class="pay-titel">Hình thức thanh toán</h5>
-									<div class="payment-method">
-										<form action="#">
-											 <div class="payment-signal">
-												<input type="radio" name="transfer" value="transfer" checked>
-												<h3>Tiền mặt khi nhận hàng</h3>
-											  </div>
-											  <!-- <div class="payment-signal type">
-												<input type="radio" name="payment" value="payment">
-												<h3>Chuyển khoản ( Tạm thời chưa hỗ trợ ) </h3>
-											  </div>  -->
-										</form>
-									</div>
                     				@guest
                     				@else
 			                            <form id="VNPAY" action="{{ route('customer.create_pay') }}" method="POST" style="display: none;">
 			                                @csrf
 			                            </form>
 										<div class="subtotal-button">
-											<a href="{{ route('customer.submit_cart') }}">Đặt hàng</a>
+											<a href="{{ route('customer.submit_cart') }}">Thanh toán khi nhận hàng</a>
 											<a href="#" onclick="event.preventDefault(); document.getElementById('VNPAY').submit();" style="color: #fff;background-color: #337ab7">Thanh toán VNPAY</a>
 										</div>
                     				@endguest

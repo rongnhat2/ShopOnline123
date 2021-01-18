@@ -10,7 +10,7 @@
 							</div>
 							<div class="service-info">
 								<h4>Miễn phí giao hàng</h4>
-								<p>Free shipping over $100</p>
+								<p>Miễn phí giao hàng toàn quốc</p>
 							</div>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
 							</div>
 							<div class="service-info">
 								<h4>Hỗ trợ trực tuyến</h4>
-								<p> 0123 462 5658</p>
+								<p> 0981 948 966</p>
 							</div>
 						</div>
 					</div>
