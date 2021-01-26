@@ -55,7 +55,7 @@
                             <tr>
                                 <td><?php echo $value->name ?></td>
                                 <td><?php echo $value->view ?></td>
-                                <td><?php echo $value->order_detail[0]->total ?></td>
+                                <td><?php echo sizeof($value->order_detail) == 0 ? '0' : $value->order_detail[0]->total ?></td>
                             </tr>
                           <?php endforeach ?>
                         </tbody>
@@ -81,7 +81,7 @@
                           <?php foreach ($buying_data as $key => $value): ?>
                             <tr>
                                 <td><?php echo $value->name ?></td>
-                                <td><?php echo $value->order_detail[0]->total ?></td>
+                                <td><?php echo sizeof($value->order_detail) == 0 ? '0' : $value->order_detail[0]->total ?></td>
                                 <td><?php echo $value->view ?></td>
                             </tr>
                           <?php endforeach ?>
